@@ -12,7 +12,7 @@ export default function Home() {
         <div>
           <p className="eyebrow">Portfolio</p>
           <h1 className="hero-title">
-            Hello, I'm
+            Hallo, ik ben
             <br />
             Brahim El Mossaoui
           </h1>
