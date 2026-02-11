@@ -25,7 +25,7 @@ export default function Home() {
               Bekijk mijn blog
             </Link>
             <a className="btn btn-secondary" href={linkedinUrl} target="_blank" rel="noreferrer">
-              Online CV
+              linkedin
             </a>
           </div>
         </div>
