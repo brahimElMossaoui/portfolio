@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
-import { getLatestPosts } from "../data/posts";
 
 const linkedinUrl = "https://www.linkedin.com/in/brahim-el-mossaoui-347a58223/";
 
 export default function Home() {
-  const latest = getLatestPosts(1)[0];
-
   return (
     <div className="stack">
       <section className="hero">
@@ -41,12 +38,13 @@ export default function Home() {
         </div>
 
         <article className="card latest-card">
-          <div className="post-meta">Blogpost week 1</div>
-          <h3 className="post-title">Dag 1</h3>
+          <div className="post-meta">Blogpost week 2</div>
+          <h3 className="post-title">Blog week 2</h3>
           <p className="post-excerpt">
-            De eerste dag in het bedrijf was super aangenaam. We werden goed verwelkomd en voelden
-            meteen de goede sfeer. We hebben een korte introductie gekregen van het bedrijf, hoe de
-            stage zal verlopen en wat de verwachtingen zijn.
+            Tijdens mijn stage bij Brightest heb ik in mijn tweede week gewerkt aan het verder
+            uitbouwen van een professionele webshop-frontend in TypeScript. Ik ben gestart vanuit
+            een basisproject en heb dit verder ontwikkeld tot een functionele en gestructureerde
+            webshop.
           </p>
           <Link className="link" to="/blog">
             Read more -&gt;
