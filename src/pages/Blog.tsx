@@ -12,9 +12,9 @@ export default function Blog() {
         </p>
         <p className="post-excerpt">
           Aan het begin van de week heb ik de blogpost afgewerkt. Het was leuk en leerzaam om te
-          zien wat er allemaal in de voorgaande week is gedaan en soms kan dit ook een belletje
-          doen rinkelen dat er eventueel te weinig is gedaan of het kan een geruststelling zijn als
-          je goed op schema bent.
+          zien wat er allemaal in de voorgaande week is gedaan. Soms kan dit ook een belletje doen
+          rinkelen dat er eventueel te weinig is gedaan, of het kan een geruststelling zijn als je
+          goed op schema zit.
         </p>
         <p className="post-excerpt">
           Kort daarna vond er een meeting plaats waarin we voor de eerste keer konden tonen wat we
@@ -24,20 +24,20 @@ export default function Blog() {
           slag konden.
         </p>
         <p className="post-excerpt">
-          Na de meeting heb ik de ontvangen feedback verwerkt en geimplementeerd. Hierbij lag de
-          focus op het verbeteren van gebruiksvriendelijkheid, het verfijnen van bestaande
+          Na de meeting heb ik de ontvangen feedback verwerkt en geïmplementeerd. Hierbij lag de
+          focus op het verbeteren van de gebruiksvriendelijkheid, het verfijnen van bestaande
           onderdelen en het wegwerken van kleine inconsistenties. Deze iteratie zorgde ervoor dat
           het project beter aansluit bij de verwachtingen en een meer afgewerkt gevoel geeft.
         </p>
         <p className="post-excerpt">
-          Daarnaast heb ik onze Trello-board geupdatet om het overzicht en de planning te
+          Daarnaast heb ik ons Trello-board geüpdatet om het overzicht en de planning te
           verbeteren. Ik heb extra user stories toegevoegd, zodat de resterende taken duidelijker
           gedefinieerd zijn en het team een beter zicht heeft op de volgende stappen. Dit helpt om
-          prioriteiten scherper te stellen en efficienter samen te werken.
+          prioriteiten scherper te stellen en efficiënter samen te werken.
         </p>
         <p className="post-excerpt">
           Later in de week ontvingen we ook de bedrijfsguidelines met betrekking tot kleuren en
-          logo&apos;s. Op basis daarvan heb ik de nodige aanpassingen doorgevoerd om de visuele
+          logo’s. Op basis daarvan heb ik de nodige aanpassingen doorgevoerd om de visuele
           identiteit correct te implementeren. Dit was een belangrijke stap om het project
           consistenter en professioneler te maken en beter te laten aansluiten bij de huisstijl van
           het bedrijf.
