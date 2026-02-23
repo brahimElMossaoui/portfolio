@@ -38,13 +38,11 @@ export default function Home() {
         </div>
 
         <article className="card latest-card">
-          <div className="post-meta">Blogpost week 2</div>
-          <h3 className="post-title">Blog week 2</h3>
+          <div className="post-meta">Blogpost week 3</div>
+          <h3 className="post-title">Blog week 3</h3>
           <p className="post-excerpt">
-            Tijdens mijn stage bij Brightest heb ik in mijn tweede week gewerkt aan het verder
-            uitbouwen van een professionele webshop-frontend in TypeScript. Ik ben gestart vanuit
-            een basisproject en heb dit verder ontwikkeld tot een functionele en gestructureerde
-            webshop.
+            Deze week stond vooral in het teken van vooruitgang boeken, feedback verwerken en onze
+            projectstructuur verder verfijnen.
           </p>
           <Link className="link" to="/blog">
             Read more -&gt;
