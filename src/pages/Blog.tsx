@@ -55,8 +55,7 @@ export default function Blog() {
           <h3 className="post-title">Blog week 4</h3>
           <p className="post-excerpt">
             Deze week heb ik vooral gewerkt aan het gedeelte rond de users. Ik heb hier alle
-            CRUD-operaties voor ontwikkeld, zoals het aanmaken, aanpassen, ophalen en verwijderen
-            van gebruikers.
+            CRUD-operaties voor ontwikkeld.
           </p>
           <p className="post-excerpt">
             Maandag ben ik begonnen met een update van de blogpost. Toen mijn collega's aankwamen,
