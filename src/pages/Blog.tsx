@@ -85,7 +85,7 @@ export default function Blog() {
           <p className="post-excerpt">
             Vrijdag ben ik gestart met het koppelen van deze update-functionaliteit aan de frontend.
             Daarnaast heb ik ook nog de get-functionaliteit voor users aangemaakt. Daarmee waren
-            alle basisoperaties voor users klaar voor deze week.
+            alle CRUD operaties voor users klaar voor deze week.
           </p>
           <p className="post-excerpt">
             Het was een heel leerzame week. Ik had in het begin wat moeite met commits maken en
