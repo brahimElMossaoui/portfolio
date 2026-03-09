@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week5Tags = ["#Users", "#CRUD", "#Admin", "#MergeConflicten", "#Jobbeurs", "#Intervisie"];
 const week4Tags = ["#Users", "#CRUD", "#Backend", "#Frontend", "#Demo", "#Git"];
 const week3Tags = ["#Planning", "#Feedback", "#Trello", "#UserStories", "#Guidelines", "#Branding"];
 const week2Tags = ["#TypeScript", "#Webshop", "#Frontend", "#Styling", "#Componenten", "#GameNight"];
@@ -10,18 +11,20 @@ export default function Blog() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const allTags = useMemo(
-    () => Array.from(new Set([...week4Tags, ...week3Tags, ...week2Tags, ...week1Tags])).sort(),
+    () =>
+      Array.from(new Set([...week5Tags, ...week4Tags, ...week3Tags, ...week2Tags, ...week1Tags])).sort(),
     []
   );
 
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek5 = hasTagMatch(week5Tags);
   const showWeek4 = hasTagMatch(week4Tags);
   const showWeek3 = hasTagMatch(week3Tags);
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
-  const hasResults = showWeek4 || showWeek3 || showWeek2 || showWeek1;
+  const hasResults = showWeek5 || showWeek4 || showWeek3 || showWeek2 || showWeek1;
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
@@ -49,8 +52,61 @@ export default function Blog() {
         </article>
       ) : null}
 
-      {showWeek4 ? (
+      {showWeek5 ? (
         <article className="card latest-card">
+          <div className="post-meta">Blogpost week 5</div>
+          <h3 className="post-title">Blog week 5</h3>
+          <p className="post-excerpt">
+            Deze week was een beetje anders dan normaal. Ik ben de week begonnen op kantoor. Daar
+            heb ik voornamelijk gewerkt aan de CRUD-functionaliteiten van de users.
+          </p>
+          <p className="post-excerpt">
+            Tijdens het werken kwam ik ook enkele mergeconflicten tegen, waardoor een deel van de
+            code herschreven moest worden. Dit heb ik dan ook aangepakt zodat alles opnieuw correct
+            samenwerkte.
+          </p>
+          <p className="post-excerpt">
+            Later op de dag heb ik ook de blogpost geschreven en deze vervolgens online gezet. In
+            de namiddag had ik nog een meeting met de projectmanager (PM). Tijdens deze meeting
+            hebben we kort besproken hoe alles verloopt en waar ik momenteel mee bezig ben.
+          </p>
+         
+          <p className="post-excerpt">
+            Op dinsdag ben ik verder gegaan met de CRUD-functionaliteiten van de users. Ik heb hier
+            verder aan gewerkt en uiteindelijk deze taak volledig afgewerkt.
+          </p>
+          <p className="post-excerpt">
+            Woensdag was er een jobbeurs. Ik ben daar naartoe geweest tussen 14u en 15u.
+            Persoonlijk vond ik het niet zo nuttig, omdat bijna geen enkel bedrijf vacatures open
+            had staan voor juniors. We hebben een volledige ronde gedaan langs de verschillende
+            stands en zijn daarna terug naar huis vertrokken.
+          </p>
+          <p className="post-excerpt">
+            Donderdag was geen kantoordag, omdat we een intervisiemoment op school hadden. Tijdens
+            dit moment hebben we met enkele medeleerlingen besproken hoe onze stage verloopt, wat
+            we geleerd hebben en welke technologieen we gebruiken.
+          </p>
+          <p className="post-excerpt">
+            Op vrijdag ben ik opnieuw verder gaan werken aan de applicatie. Ik ben gestart met het
+            begin van de admin CRUD-functionaliteiten en heb hier alvast een eerste deel van kunnen
+            uitwerken.
+          </p>
+          <div className="week5-gallery">
+            <img src="/images/img1.jpg" alt="Week 5 afbeelding 1" />
+            <img src="/images/image2.jpg" alt="Week 5 afbeelding 2" />
+          </div>
+          <div className="tags">
+            {week5Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </article>
+      ) : null}
+
+      {showWeek4 ? (
+        <article className="card">
           <div className="post-meta">Blogpost week 4</div>
           <h3 className="post-title">Blog week 4</h3>
           <p className="post-excerpt">
