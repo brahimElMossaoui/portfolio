@@ -38,17 +38,17 @@ export default function Home() {
         </div>
 
         <article className="card latest-card">
-          <div className="post-meta">Blogpost week 5</div>
-          <h3 className="post-title">Blog week 5</h3>
+          <div className="post-meta">Blogpost week 6</div>
+          <h3 className="post-title">Blog week 6</h3>
           <p className="post-excerpt">
-            Deze week was anders dan normaal: ik werkte verder aan de users CRUD, loste
-            mergeconflicten op, ging naar de jobbeurs en startte met de admin CRUD.
+            Deze week koppelde ik de frontend verder aan de backend, werkte ik rollen en rechten
+            uit, verbeterde ik de UX en voegde ik bulkacties en extra bugfixes toe.
           </p>
           <div className="tags">
-            <span className="tag tag-static">#Users</span>
-            <span className="tag tag-static">#CRUD</span>
-            <span className="tag tag-static">#Admin</span>
-            <span className="tag tag-static">#Jobbeurs</span>
+            <span className="tag tag-static">#Frontend</span>
+            <span className="tag tag-static">#Backend</span>
+            <span className="tag tag-static">#UX</span>
+            <span className="tag tag-static">#Bugs</span>
           </div>
           <Link className="link" to="/blog">
             Read more -&gt;

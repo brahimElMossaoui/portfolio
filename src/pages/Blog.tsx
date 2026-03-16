@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week6Tags = ["#Frontend", "#Backend", "#UX", "#Bugs", "#BulkActions", "#Validatie"];
 const week5Tags = ["#Users", "#CRUD", "#Admin", "#MergeConflicten", "#Jobbeurs", "#Intervisie"];
 const week4Tags = ["#Users", "#CRUD", "#Backend", "#Frontend", "#Demo", "#Git"];
 const week3Tags = ["#Planning", "#Feedback", "#Trello", "#UserStories", "#Guidelines", "#Branding"];
@@ -12,19 +13,22 @@ export default function Blog() {
 
   const allTags = useMemo(
     () =>
-      Array.from(new Set([...week5Tags, ...week4Tags, ...week3Tags, ...week2Tags, ...week1Tags])).sort(),
+      Array.from(
+        new Set([...week6Tags, ...week5Tags, ...week4Tags, ...week3Tags, ...week2Tags, ...week1Tags])
+      ).sort(),
     []
   );
 
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek6 = hasTagMatch(week6Tags);
   const showWeek5 = hasTagMatch(week5Tags);
   const showWeek4 = hasTagMatch(week4Tags);
   const showWeek3 = hasTagMatch(week3Tags);
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
-  const hasResults = showWeek5 || showWeek4 || showWeek3 || showWeek2 || showWeek1;
+  const hasResults = showWeek6 || showWeek5 || showWeek4 || showWeek3 || showWeek2 || showWeek1;
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
@@ -49,6 +53,86 @@ export default function Blog() {
             Geen resultaten voor de geselecteerde tags. Probeer een andere tagcombinatie of klik op
             reset.
           </p>
+        </article>
+      ) : null}
+
+      {showWeek6 ? (
+        <article className="card latest-card">
+          <div className="post-meta">Blogpost week 6</div>
+          <h3 className="post-title">Blog week 6</h3>
+          <p className="post-excerpt">
+            Afgelopen week hebben we grote stappen gezet in de verdere ontwikkeling van de
+            webapplicatie. De focus lag vooral op het volledig koppelen van de frontend met de
+            backend en het verder verbeteren van de gebruikerservaring. Daarnaast hebben we ook
+            verschillende bugs opgelost en nieuwe functionaliteiten toegevoegd.
+          </p>
+          <p className="post-excerpt">
+            Op maandag begon de week met een meeting waarin we kort bespraken waar we momenteel
+            stonden in het project en welke onderdelen nog verder uitgewerkt moesten worden. Na
+            deze meeting ben ik aan de slag gegaan met het verder koppelen van de frontend aan de
+            backend. Concreet betekende dit dat de users- en admins-beheerpagina&apos;s volledig
+            verbonden werden met de backend. Hierdoor werken de CRUD-functionaliteiten nu volledig
+            zoals verwacht. Het was een belangrijke stap, omdat dit ervoor zorgt dat de applicatie
+            nu echt met live data werkt in plaats van met tijdelijke of testdata.
+          </p>
+          <p className="post-excerpt">
+            Op dinsdag lag de focus voornamelijk op het correct instellen van rollen en rechten
+            binnen de applicatie. We hebben ervoor gezorgd dat een superadmin alle gegevens kan
+            bekijken en ook kan filteren per instantie. Een admin daarentegen ziet enkel de users
+            die tot zijn eigen instantie behoren. Door deze scheiding is het systeem niet alleen
+            overzichtelijker, maar ook veiliger en beter georganiseerd.
+          </p>
+          <p className="post-excerpt">
+            Tijdens woensdag hebben we verschillende UX-verbeteringen doorgevoerd. Zo hebben we
+            onder andere een bevestigingspopup toegevoegd wanneer een gebruiker verwijderd wordt,
+            zodat dit niet per ongeluk kan gebeuren. Daarnaast verschijnen succesmeldingen nu
+            rechtsonder in beeld wanneer een actie succesvol werd uitgevoerd. Ook hebben we de
+            knoppen en de algemene layout van bepaalde pagina&apos;s verbeterd en de users
+            overzichtelijker weergegeven in duidelijke kolommen. Deze kleine verbeteringen maken
+            het gebruik van de applicatie een stuk aangenamer.
+          </p>
+          <p className="post-excerpt">
+            Op donderdag hadden we opnieuw een meeting waarin we de vooruitgang van de week
+            bespraken. Na de meeting heb ik verder gewerkt aan het toevoegen van
+            bulkfunctionaliteiten. Zo hebben we een functie toegevoegd om snel meerdere users aan
+            te maken via een &quot;fast create users&quot;-optie. Daarnaast hebben we ook een
+            mogelijkheid toegevoegd om alle users van een geselecteerde instantie in een keer te
+            verwijderen, uiteraard met een duidelijke waarschuwing zodat dit niet per ongeluk
+            gebeurt.
+          </p>
+          <p className="post-excerpt">
+            Op vrijdag hebben we ons verder gericht op het verbeteren van de instances en de
+            bugs-module. Voor de instances hebben we een mogelijkheid toegevoegd om een instantie te
+            enablen of disablen. Enkel instanties die enabled zijn, kunnen nu gekozen worden bij
+            het registreren van nieuwe users. Dit zorgt voor meer controle over welke instanties
+            actief gebruikt kunnen worden.
+          </p>
+          <p className="post-excerpt">
+            Daarnaast hebben we de bugs-module verder gekoppeld aan de backend. Een nieuwe bug uit
+            de backend werd ook in de frontend geimplementeerd en we hebben een automatische
+            synchronisatie toegevoegd zodat ontbrekende bug-configuraties automatisch worden
+            aangemaakt. Ook hebben we een probleem opgelost waarbij soms dubbele bug-entries konden
+            verschijnen.
+          </p>
+          <p className="post-excerpt">
+            Naast deze nieuwe functionaliteiten hebben we tijdens de week ook verschillende
+            technische problemen opgelost, zoals parsingproblemen, hydration errors, API-call
+            issues, rate-limit gedrag en enkele validatieproblemen. Door deze fixes werkt de
+            applicatie nu stabieler en betrouwbaarder.
+          </p>
+          <p className="post-excerpt">
+            Kort samengevat was het een productieve week waarin de applicatie opnieuw een stuk
+            completer en gebruiksvriendelijker is geworden. De koppeling tussen frontend en backend
+            is nu grotendeels afgerond en verschillende onderdelen van het systeem werken nu
+            volledig geintegreerd samen.
+          </p>
+          <div className="tags">
+            {week6Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
         </article>
       ) : null}
 
