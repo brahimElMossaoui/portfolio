@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week7Tags = ["#Bugfixes", "#Testing", "#Automation", "#Meetings", "#Planning", "#Teamwork"];
 const week6Tags = ["#Frontend", "#Backend", "#UX", "#Bugs", "#BulkActions", "#Validatie"];
 const week5Tags = ["#Users", "#CRUD", "#Admin", "#MergeConflicten", "#Jobbeurs", "#Intervisie"];
 const week4Tags = ["#Users", "#CRUD", "#Backend", "#Frontend", "#Demo", "#Git"];
@@ -14,7 +15,15 @@ export default function Blog() {
   const allTags = useMemo(
     () =>
       Array.from(
-        new Set([...week6Tags, ...week5Tags, ...week4Tags, ...week3Tags, ...week2Tags, ...week1Tags])
+        new Set([
+          ...week7Tags,
+          ...week6Tags,
+          ...week5Tags,
+          ...week4Tags,
+          ...week3Tags,
+          ...week2Tags,
+          ...week1Tags,
+        ])
       ).sort(),
     []
   );
@@ -22,13 +31,15 @@ export default function Blog() {
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek7 = hasTagMatch(week7Tags);
   const showWeek6 = hasTagMatch(week6Tags);
   const showWeek5 = hasTagMatch(week5Tags);
   const showWeek4 = hasTagMatch(week4Tags);
   const showWeek3 = hasTagMatch(week3Tags);
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
-  const hasResults = showWeek6 || showWeek5 || showWeek4 || showWeek3 || showWeek2 || showWeek1;
+  const hasResults =
+    showWeek7 || showWeek6 || showWeek5 || showWeek4 || showWeek3 || showWeek2 || showWeek1;
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
@@ -56,8 +67,53 @@ export default function Blog() {
         </article>
       ) : null}
 
-      {showWeek6 ? (
+      {showWeek7 ? (
         <article className="card latest-card">
+          <div className="post-meta">Blogpost week 7</div>
+          <h3 className="post-title">Blog week 7</h3>
+          <p className="post-excerpt">
+            De voorbije week stond vooral in het teken van het oplossen en implementeren van bugs.
+            We hebben hier veel tijd in geinvesteerd om ervoor te zorgen dat alles stabieler en
+            betrouwbaarder werkt. Het is duidelijk dat dit een cruciale stap is in de verdere
+            ontwikkeling van ons project.
+          </p>
+          <p className="post-excerpt">
+            Naast het technische werk besteden we ook dagelijks aandacht aan het onderhouden van
+            onze teamdynamiek. Dit doen we op een leuke manier: een potje tafelvoetbal! Het zorgt
+            niet alleen voor ontspanning, maar versterkt ook de samenwerking en sfeer binnen het
+            team.
+          </p>
+          <p className="post-excerpt">
+            Tijdens de meeting van maandag hebben we een belangrijke knoop doorgehakt: we hebben
+            besproken wanneer we onze eindpresentatie zullen inplannen. Dit geeft ons een duidelijke
+            deadline om naartoe te werken en helpt ons om de komende weken goed te structureren.
+          </p>
+          <p className="post-excerpt">
+            Op donderdag hebben we verder ingezoomd op de automation binnen het project. Daarbij
+            hebben we afgesproken welk deel ik op mij zal nemen. Dit zorgt voor meer duidelijkheid
+            in de taakverdeling en maakt het makkelijker om gericht vooruitgang te boeken.
+          </p>
+          <p className="post-excerpt">
+            Daarnaast hebben we deze week ook veel getest. We hebben het project grondig onder de
+            loep genomen om eventuele fouten of problemen op te sporen. Door uitgebreid te testen,
+            krijgen we beter inzicht in wat goed werkt en waar nog verbeteringen nodig zijn.
+          </p>
+          <p className="post-excerpt">
+            Kortom, het was een productieve week waarin we zowel technisch als team mooie
+            stappen hebben gezet. Op naar de volgende fase!
+          </p>
+          <div className="tags">
+            {week7Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </article>
+      ) : null}
+
+      {showWeek6 ? (
+        <article className="card">
           <div className="post-meta">Blogpost week 6</div>
           <h3 className="post-title">Blog week 6</h3>
           <p className="post-excerpt">

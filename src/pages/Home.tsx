@@ -38,17 +38,17 @@ export default function Home() {
         </div>
 
         <article className="card latest-card">
-          <div className="post-meta">Blogpost week 6</div>
-          <h3 className="post-title">Blog week 6</h3>
+          <div className="post-meta">Blogpost week 7</div>
+          <h3 className="post-title">Blog week 7</h3>
           <p className="post-excerpt">
-            Deze week koppelde ik de frontend verder aan de backend, werkte ik rollen en rechten
-            uit, verbeterde ik de UX en voegde ik bulkacties en extra bugfixes toe.
+            Deze week lag de focus op bugfixes, testing, automation en het plannen van de
+            eindpresentatie, terwijl we tegelijk ook de teamdynamiek sterk hielden.
           </p>
           <div className="tags">
-            <span className="tag tag-static">#Frontend</span>
-            <span className="tag tag-static">#Backend</span>
-            <span className="tag tag-static">#UX</span>
-            <span className="tag tag-static">#Bugs</span>
+            <span className="tag tag-static">#Bugfixes</span>
+            <span className="tag tag-static">#Testing</span>
+            <span className="tag tag-static">#Automation</span>
+            <span className="tag tag-static">#Teamwork</span>
           </div>
           <Link className="link" to="/blog">
             Read more -&gt;
