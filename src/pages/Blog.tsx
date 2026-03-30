@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week8Tags = ["#Feedback", "#Paginatie", "#Admin", "#UX", "#Optimalisatie", "#Features"];
 const week7Tags = ["#Bugfixes", "#Testing", "#Automation", "#Meetings", "#Planning", "#Teamwork"];
 const week6Tags = ["#Frontend", "#Backend", "#UX", "#Bugs", "#BulkActions", "#Validatie"];
 const week5Tags = ["#Users", "#CRUD", "#Admin", "#MergeConflicten", "#Jobbeurs", "#Intervisie"];
@@ -16,6 +17,7 @@ export default function Blog() {
     () =>
       Array.from(
         new Set([
+          ...week8Tags,
           ...week7Tags,
           ...week6Tags,
           ...week5Tags,
@@ -31,6 +33,7 @@ export default function Blog() {
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek8 = hasTagMatch(week8Tags);
   const showWeek7 = hasTagMatch(week7Tags);
   const showWeek6 = hasTagMatch(week6Tags);
   const showWeek5 = hasTagMatch(week5Tags);
@@ -39,7 +42,14 @@ export default function Blog() {
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
   const hasResults =
-    showWeek7 || showWeek6 || showWeek5 || showWeek4 || showWeek3 || showWeek2 || showWeek1;
+    showWeek8 ||
+    showWeek7 ||
+    showWeek6 ||
+    showWeek5 ||
+    showWeek4 ||
+    showWeek3 ||
+    showWeek2 ||
+    showWeek1;
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
@@ -67,8 +77,62 @@ export default function Blog() {
         </article>
       ) : null}
 
-      {showWeek7 ? (
+      {showWeek8 ? (
         <article className="card latest-card">
+          <div className="post-meta">Blogpost week 8</div>
+          <h3 className="post-title">Blog week 8</h3>
+          <p className="post-excerpt">
+            Op maandag begon de week zoals gewoonlijk met een rustige opstart: een kop koffie en
+            een kort babbeltje met het team. Daarna volgde onze wekelijkse meeting, waarin we
+            elkaar een update gaven over de vooruitgang van de voorbije week. Tijdens deze meeting
+            werd de progressie ook besproken met de stagementor, die waar nodig bijstuurde en extra
+            feedback gaf. Daarnaast werd er vooruitgeblikt naar de komende weken: wat er nog
+            verwacht wordt van ons als team, maar ook wat er individueel van ons verwacht wordt.
+            Nadien ben ik verder gegaan met het implementeren van de feedback die ik had gekregen
+            op mijn pull request. Intussen is ons project inhoudelijk volledig afgerond volgens de
+            vooropgestelde vereisten van het bedrijf.
+          </p>
+          <p className="post-excerpt">
+            Op dinsdag ben ik verder gegaan met het ontwikkelen en verwerken van feedback. Mijn
+            focus lag vooral op het implementeren van paginatie op de adminpagina. Hierbij heb ik
+            ervoor gezorgd dat grote hoeveelheden data overzichtelijk worden weergegeven, met
+            functionaliteiten zoals navigatie tussen pagina&apos;s, het beperken van het aantal
+            items per pagina en het verbeteren van de gebruiksvriendelijkheid voor de
+            eindgebruiker.
+          </p>
+          <p className="post-excerpt">
+            Woensdag stond vooral in het teken van verder ontwikkelen, met weinig meetings. Er was
+            wel een wekelijkse meeting rond mijn persoonlijke stageprogressie. Tijdens dit gesprek
+            werd besproken hoe ik me voel binnen de stage, waar ik eventueel tegenaan loop en hoe
+            mijn groei verloopt. Dit moment biedt ook ruimte om feedback te geven en te ontvangen,
+            zodat mijn leerproces optimaal blijft verlopen.
+          </p>
+          <p className="post-excerpt">
+            Donderdag begonnen we opnieuw met een koffie en een kort babbeltje, waarna ik verder
+            werkte aan de laatste tickets om het project volledig af te ronden. Rond de middag
+            hadden we een technische meeting, waarin we bespraken welke &quot;nice-to-have&quot;
+            functionaliteiten we nog kunnen toevoegen. Denk hierbij aan extra validaties, kleine
+            UX-verbeteringen, performantie-optimalisaties en eventueel bijkomende features die het
+            project nog sterker maken binnen de resterende tijd van mijn stage.
+          </p>
+          <p className="post-excerpt">
+            Op vrijdag ben ik gestart met het opstellen van nieuwe tickets voor deze extra
+            functionaliteiten. Vervolgens ben ik rustig begonnen met de implementatie ervan, waarbij
+            ik stapsgewijs nieuwe features toevoeg, code optimaliseer en ervoor zorg dat alles goed
+            getest en geintegreerd wordt binnen het bestaande project.
+          </p>
+          <div className="tags">
+            {week8Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </article>
+      ) : null}
+
+      {showWeek7 ? (
+        <article className="card">
           <div className="post-meta">Blogpost week 7</div>
           <h3 className="post-title">Blog week 7</h3>
           <p className="post-excerpt">
@@ -193,7 +257,7 @@ export default function Blog() {
       ) : null}
 
       {showWeek5 ? (
-        <article className="card latest-card">
+        <article className="card">
           <div className="post-meta">Blogpost week 5</div>
           <h3 className="post-title">Blog week 5</h3>
           <p className="post-excerpt">
