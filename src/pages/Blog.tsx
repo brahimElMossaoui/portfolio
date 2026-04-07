@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week9Tags = ["#Meeting", "#Technisch", "#Database", "#Team", "#Ontwikkeling", "#Stage"];
 const week8Tags = ["#Feedback", "#Paginatie", "#Admin", "#UX", "#Optimalisatie", "#Features"];
 const week7Tags = ["#Bugfixes", "#Testing", "#Automation", "#Meetings", "#Planning", "#Teamwork"];
 const week6Tags = ["#Frontend", "#Backend", "#UX", "#Bugs", "#BulkActions", "#Validatie"];
@@ -17,6 +18,7 @@ export default function Blog() {
     () =>
       Array.from(
         new Set([
+          ...week9Tags,
           ...week8Tags,
           ...week7Tags,
           ...week6Tags,
@@ -33,6 +35,7 @@ export default function Blog() {
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek9 = hasTagMatch(week9Tags);
   const showWeek8 = hasTagMatch(week8Tags);
   const showWeek7 = hasTagMatch(week7Tags);
   const showWeek6 = hasTagMatch(week6Tags);
@@ -42,6 +45,7 @@ export default function Blog() {
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
   const hasResults =
+    showWeek9 ||
     showWeek8 ||
     showWeek7 ||
     showWeek6 ||
@@ -74,6 +78,51 @@ export default function Blog() {
             Geen resultaten voor de geselecteerde tags. Probeer een andere tagcombinatie of klik op
             reset.
           </p>
+        </article>
+      ) : null}
+
+      {showWeek9 ? (
+        <article className="card latest-card">
+          <div className="post-meta">Blogpost week 9</div>
+          <h3 className="post-title">Blog week 9</h3>
+          <p className="post-excerpt">
+            Afgelopen week was een productieve en gezellige week waarin ik zowel inhoudelijk als
+            sociaal verder ben gegroeid binnen het project en het team.
+          </p>
+          <p className="post-excerpt">
+            Op woensdag had ik een belangrijke meeting, inclusief een technische bespreking.
+            Tijdens deze sessie hebben we niet alleen de huidige stand van zaken doorgenomen, maar
+            ook gekeken naar mogelijke uitbreidingen van het project. Het was waardevol om samen na
+            te denken over extra functionaliteiten die we kunnen toevoegen om het eindresultaat nog
+            sterker te maken.
+          </p>
+          <p className="post-excerpt">
+            Daarnaast heb ik tijdens deze meeting ook hulp gekregen bij een specifiek technisch
+            onderdeel, namelijk hoe ik een image kan toevoegen aan de database. Dit gaf me meer
+            inzicht en vertrouwen om hier zelfstandig verder mee aan de slag te gaan.
+          </p>
+          <p className="post-excerpt">
+            Naast het inhoudelijke werk was er ook ruimte voor sociaal contact. Ik heb beter
+            kennisgemaakt met mijn collega&apos;s, wat zorgde voor een fijne en ontspannen sfeer.
+            Tussendoor hebben we zelfs een potje shotterkas gespeeld, wat zorgde voor wat extra
+            teamspirit en plezier tijdens de werkdag.
+          </p>
+          <p className="post-excerpt">
+            Verder heb ik de rest van de week besteed aan het verder ontwikkelen van het project.
+            Ik heb stappen gezet in de implementatie en ben dichter bij het realiseren van de
+            gestelde doelen gekomen.
+          </p>
+          <p className="post-excerpt">
+            Kortom, het was een gebalanceerde week met zowel technische vooruitgang als leuke
+            momenten met het team.
+          </p>
+          <div className="tags">
+            {week9Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
         </article>
       ) : null}
 
