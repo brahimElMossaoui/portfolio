@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week10Tags = ["#Testing", "#Feedback", "#Security", "#Demo", "#Tickets", "#Stage"];
 const week9Tags = ["#Meeting", "#Technisch", "#Database", "#Team", "#Ontwikkeling", "#Stage"];
 const week8Tags = ["#Feedback", "#Paginatie", "#Admin", "#UX", "#Optimalisatie", "#Features"];
 const week7Tags = ["#Bugfixes", "#Testing", "#Automation", "#Meetings", "#Planning", "#Teamwork"];
@@ -18,6 +19,7 @@ export default function Blog() {
     () =>
       Array.from(
         new Set([
+          ...week10Tags,
           ...week9Tags,
           ...week8Tags,
           ...week7Tags,
@@ -35,6 +37,7 @@ export default function Blog() {
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek10 = hasTagMatch(week10Tags);
   const showWeek9 = hasTagMatch(week9Tags);
   const showWeek8 = hasTagMatch(week8Tags);
   const showWeek7 = hasTagMatch(week7Tags);
@@ -45,6 +48,7 @@ export default function Blog() {
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
   const hasResults =
+    showWeek10 ||
     showWeek9 ||
     showWeek8 ||
     showWeek7 ||
@@ -78,6 +82,49 @@ export default function Blog() {
             Geen resultaten voor de geselecteerde tags. Probeer een andere tagcombinatie of klik op
             reset.
           </p>
+        </article>
+      ) : null}
+
+      {showWeek10 ? (
+        <article className="card latest-card">
+          <div className="post-meta">Blogpost week 10</div>
+          <h3 className="post-title">Blog week 10</h3>
+          <p className="post-excerpt">
+            Afgelopen week stond volledig in het teken van testen en finetunen van mijn project.
+            Ik heb me vooral gefocust op het feedbackgedeelte en alles wat al ontwikkeld was eens
+            grondig onder de loep genomen. Het was eigenlijk het moment om even stil te staan bij:
+            werkt alles zoals het hoort?
+          </p>
+          <p className="post-excerpt">
+            Concreet heb ik gecontroleerd of alle gebruikers de juiste rechten hebben en of elke
+            functionaliteit effectief doet wat ze moet doen. Daarnaast heb ik ook gekeken naar de
+            beveiliging, zoals passwordvalidatie en andere checks. Het gaf me een goed beeld van
+            hoe stabiel het project momenteel is, maar ook waar er nog kleine verbeterpunten zitten.
+          </p>
+          <p className="post-excerpt">
+            Donderdag was een belangrijke dag, want toen hadden we onze laatste meeting met mijn
+            technische begeleider, de project owner en mijn stagepartner Milan. Voor Milan was het
+            trouwens zijn laatste stagedag op kantoor, wat het toch een beetje een speciaal moment
+            maakte. Tijdens deze meeting hebben we ook een demo gegeven van het project.
+          </p>
+          <p className="post-excerpt">
+            Het was echt fijn om te zien hoeveel we al bereikt hebben. De reactie was positief en
+            dat gaf toch wel een extra motivatieboost. Natuurlijk kwam er ook feedback uit de
+            meeting, maar dat is alleen maar goed. Ik heb die meteen omgezet in concrete tickets,
+            zodat ik er gestructureerd mee aan de slag kan.
+          </p>
+          <p className="post-excerpt">
+            Op dit moment ben ik dus bezig met het verwerken van die feedback en het verder
+            verbeteren van het project. Stap voor stap komt alles meer samen, en dat is leuk om te
+            zien.
+          </p>
+          <div className="tags">
+            {week10Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
         </article>
       ) : null}
 
