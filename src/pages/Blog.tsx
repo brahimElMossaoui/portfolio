@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week11Tags = ["#Zelfstandigheid", "#Feedback", "#Features", "#Planning", "#Meetings", "#Stage"];
 const week10Tags = ["#Testing", "#Feedback", "#Security", "#Demo", "#Tickets", "#Stage"];
 const week9Tags = ["#Meeting", "#Technisch", "#Database", "#Team", "#Ontwikkeling", "#Stage"];
 const week8Tags = ["#Feedback", "#Paginatie", "#Admin", "#UX", "#Optimalisatie", "#Features"];
@@ -19,6 +20,7 @@ export default function Blog() {
     () =>
       Array.from(
         new Set([
+          ...week11Tags,
           ...week10Tags,
           ...week9Tags,
           ...week8Tags,
@@ -37,6 +39,7 @@ export default function Blog() {
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek11 = hasTagMatch(week11Tags);
   const showWeek10 = hasTagMatch(week10Tags);
   const showWeek9 = hasTagMatch(week9Tags);
   const showWeek8 = hasTagMatch(week8Tags);
@@ -48,6 +51,7 @@ export default function Blog() {
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
   const hasResults =
+    showWeek11 ||
     showWeek10 ||
     showWeek9 ||
     showWeek8 ||
@@ -82,6 +86,70 @@ export default function Blog() {
             Geen resultaten voor de geselecteerde tags. Probeer een andere tagcombinatie of klik op
             reset.
           </p>
+        </article>
+      ) : null}
+
+      {showWeek11 ? (
+        <article className="card latest-card">
+          <div className="post-meta">Blogpost week 11</div>
+          <h3 className="post-title">Blog week 11</h3>
+          <p className="post-excerpt">
+            Deze week stond volledig in het teken van zelfstandigheid en verdieping. Waar ik de
+            weken voordien nog samenwerkte met mijn stagepartner, was ik deze week volledig op
+            mezelf aangewezen. Dat bracht enerzijds een extra uitdaging met zich mee, maar gaf me
+            anderzijds ook de kans om mijn eigen tempo te bepalen en mijn persoonlijke aanpak verder
+            te ontwikkelen.
+          </p>
+          <p className="post-excerpt">
+            Een groot deel van mijn tijd ging naar het verwerken van de feedback die we de donderdag
+            ervoor hadden ontvangen. Ik merkte dat het bekijken van die feedback met een frisse blik
+            me hielp om gerichter te werken en beter te begrijpen waar de prioriteiten lagen. In
+            plaats van alles tegelijk te willen aanpakken, heb ik bewust gekozen om me eerst te
+            focussen op het ontwikkelen van nieuwe extra functionaliteiten. Dit gaf me niet alleen
+            nieuwe energie, maar zorgde er ook voor dat ik creatief kon nadenken over hoe ik het
+            project verder kon uitbreiden.
+          </p>
+          <p className="post-excerpt">
+            Het ontwikkelen van deze extra&apos;s was zonder twijfel het meest interessante deel van
+            mijn week. Ik kreeg de ruimte om nieuwe ideeën uit te testen en dingen te bouwen die
+            echt een meerwaarde kunnen bieden. Soms liep ik tegen kleine obstakels aan, maar juist
+            die momenten zorgden ervoor dat ik nieuwe oplossingen moest zoeken en bijleerde. Het gaf
+            me een goed gevoel om te merken dat ik steeds zelfstandiger problemen kan analyseren en
+            oplossen.
+          </p>
+          <p className="post-excerpt">
+            De feedback op de bestaande onderdelen heb ik bewust nog even laten liggen. Ik wil deze
+            in de komende week grondig aanpakken, zodat ik er voldoende tijd en aandacht aan kan
+            besteden. Op die manier kan ik ervoor zorgen dat alles niet alleen werkt, maar ook
+            kwalitatief sterk en gebruiksvriendelijk is.
+          </p>
+          <p className="post-excerpt">
+            Daarnaast had ik deze week opnieuw mijn vaste meetings: met mijn stage mentor, de
+            technische begeleider en de project owner. Deze momenten blijven enorm waardevol. Ze
+            geven me niet alleen richting, maar zorgen er ook voor dat ik mijn voortgang kan
+            toelichten en gerichte feedback krijg. Het is ook motiverend om te zien dat er
+            interesse is in wat ik doe en dat mijn werk effectief opgevolgd wordt.
+          </p>
+          <p className="post-excerpt">
+            Wat deze week voor mij vooral duidelijk maakte, is hoe belangrijk structuur en planning
+            zijn wanneer je alleen werkt. Zonder directe samenwerking moet je zelf je focus bewaken
+            en ervoor zorgen dat je niet afdwaalt. Tegelijk gaf het me ook een gevoel van
+            verantwoordelijkheid en trots: dit project is nu echt &quot;van mij&quot; om verder uit
+            te bouwen.
+          </p>
+          <p className="post-excerpt">
+            Al bij al was het een productieve en leerrijke week, waarin ik niet alleen technisch
+            gegroeid ben, maar ook op vlak van zelfstandigheid en probleemoplossend denken. Ik kijk
+            ernaar uit om volgende week de feedback verder te verwerken en alles samen te brengen
+            tot een nog sterker geheel.
+          </p>
+          <div className="tags">
+            {week11Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
         </article>
       ) : null}
 
