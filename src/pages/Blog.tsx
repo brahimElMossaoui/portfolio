@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week12Tags = ["#Testing", "#Playwright", "#Trello", "#Tickets", "#QA", "#Stage"];
 const week11Tags = ["#Zelfstandigheid", "#Feedback", "#Features", "#Planning", "#Meetings", "#Stage"];
 const week10Tags = ["#Testing", "#Feedback", "#Security", "#Demo", "#Tickets", "#Stage"];
 const week9Tags = ["#Meeting", "#Technisch", "#Database", "#Team", "#Ontwikkeling", "#Stage"];
@@ -20,6 +21,7 @@ export default function Blog() {
     () =>
       Array.from(
         new Set([
+          ...week12Tags,
           ...week11Tags,
           ...week10Tags,
           ...week9Tags,
@@ -39,6 +41,7 @@ export default function Blog() {
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek12 = hasTagMatch(week12Tags);
   const showWeek11 = hasTagMatch(week11Tags);
   const showWeek10 = hasTagMatch(week10Tags);
   const showWeek9 = hasTagMatch(week9Tags);
@@ -51,6 +54,7 @@ export default function Blog() {
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
   const hasResults =
+    showWeek12 ||
     showWeek11 ||
     showWeek10 ||
     showWeek9 ||
@@ -86,6 +90,72 @@ export default function Blog() {
             Geen resultaten voor de geselecteerde tags. Probeer een andere tagcombinatie of klik op
             reset.
           </p>
+        </article>
+      ) : null}
+
+      {showWeek12 ? (
+        <article className="card latest-card">
+          <div className="post-meta">Blogpost week 12</div>
+          <h3 className="post-title">Blog week 12</h3>
+          <p className="post-excerpt">
+            Deze week voelt een beetje als het einde van een hoofdstuk en tegelijk het begin van
+            een nieuw. Na weken, of zelfs maanden, werken aan het project, kan ik eindelijk zeggen
+            dat alles afgewerkt is. Alle functionaliteiten zitten erin en er worden geen nieuwe
+            features meer toegevoegd. Dat gaf toch een klein gevoel van voldoening: zo&apos;n
+            &quot;we did it&quot;-moment, maar dan in mijn eentje.
+          </p>
+          <p className="post-excerpt">
+            Maar zoals altijd in development betekent &quot;klaar&quot; niet echt klaar. Integendeel:
+            het volgende belangrijke hoofdstuk is begonnen: testing.
+          </p>
+          <p className="post-excerpt">
+            Deze week stond dus volledig in het teken van het voorbereiden van dat testinggedeelte.
+            Ik heb heel wat nieuwe tickets aangemaakt die specifiek gericht zijn op testen: wat
+            moet getest worden, welke flows belangrijk zijn en waar mogelijke risico&apos;s zitten.
+            Al deze taken heb ik netjes gestructureerd en toegevoegd in Trello, zodat ik een
+            duidelijk overzicht heb van wat er nog moet gebeuren. Het geeft me rust om alles
+            visueel te zien staan en stap voor stap te kunnen afwerken.
+          </p>
+          <p className="post-excerpt">
+            Daarnaast ben ik me beginnen verdiepen in een nieuwe tool: Playwright. Aangezien ik
+            hier nog geen ervaring mee had, was dit in het begin even zoeken. Ik heb eerst wat
+            documentatie doorgenomen en kleine experimenten gedaan om te begrijpen hoe alles
+            werkt. Uiteindelijk is het me gelukt om Playwright te installeren en de eerste stappen
+            te zetten in het effectief gebruiken ervan. Altijd leuk om weer iets nieuws bij te
+            leren, zeker als het meteen toepasbaar is binnen je project.
+          </p>
+          <p className="post-excerpt">
+            Wat ook interessant was om te zien: de testen die eerder geschreven waren door mijn
+            stagepartner Milan, werken momenteel niet allemaal meer. Dit komt doordat de code
+            intussen sterk geevolueerd is, waardoor sommige testen verouderd zijn geraakt. Hoewel
+            ik hier deze week nog niet diep ben ingedoken, is het wel duidelijk dat hier nog werk
+            ligt. Volgende week ga ik hier zeker mee aan de slag: bestaande testen updaten, fouten
+            analyseren en zorgen dat alles weer correct draait.
+          </p>
+          <p className="post-excerpt">
+            Wat mij vooral benieuwd maakt, is dat dit testinggedeelte toch een beetje buiten mijn
+            comfortzone ligt. Tot nu toe heb ik vooral gewerkt met UI-tests en unit tests, maar nu
+            ga ik dat veel gerichter en gestructureerder aanpakken binnen het volledige project.
+            Het voelt een beetje als een nieuwe uitdaging binnen dezelfde stage, en dat maakt het
+            net interessant.
+          </p>
+          <p className="post-excerpt">
+            Als ik terugkijk op deze week, zie ik vooral een shift: van bouwen naar controleren,
+            van creeren naar verfijnen. Het is een andere mindset, maar minstens even belangrijk.
+            Een project kan er nog zo goed uitzien, zonder degelijke testing weet je nooit echt hoe
+            betrouwbaar het is.
+          </p>
+          <p className="post-excerpt">
+            Ik kijk er alvast naar uit om volgende week echt in de testing te duiken en alles tot
+            in de puntjes af te werken.
+          </p>
+          <div className="tags">
+            {week12Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
         </article>
       ) : null}
 
