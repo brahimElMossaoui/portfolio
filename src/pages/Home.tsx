@@ -38,18 +38,17 @@ export default function Home() {
         </div>
 
         <article className="card latest-card">
-          <div className="post-meta">Blogpost week 12</div>
-          <h3 className="post-title">Blog week 12</h3>
+          <div className="post-meta">Blogpost week 13</div>
+          <h3 className="post-title">Blog week 13</h3>
           <p className="post-excerpt">
-            Deze week markeerde de overgang van bouwen naar testen: project afgewerkt, testing
-            voorbereid, nieuwe tickets in Trello gezet en de eerste stappen met Playwright
-            genomen.
+            Deze week stond volledig in het teken van grondig testen, met focus op de userpage,
+            accountrollen en het oplossen van een backend buildfout.
           </p>
           <div className="tags">
             <span className="tag tag-static">#Testing</span>
-            <span className="tag tag-static">#Playwright</span>
-            <span className="tag tag-static">#Trello</span>
-            <span className="tag tag-static">#Tickets</span>
+            <span className="tag tag-static">#Userpage</span>
+            <span className="tag tag-static">#Rollen</span>
+            <span className="tag tag-static">#Backend</span>
           </div>
           <Link className="link" to="/blog">
             Read more -&gt;

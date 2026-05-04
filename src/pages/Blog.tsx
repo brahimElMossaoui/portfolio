@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week13Tags = ["#Testing", "#Userpage", "#Rollen", "#Backend", "#Meetings", "#Stage"];
 const week12Tags = ["#Testing", "#Playwright", "#Trello", "#Tickets", "#QA", "#Stage"];
 const week11Tags = ["#Zelfstandigheid", "#Feedback", "#Features", "#Planning", "#Meetings", "#Stage"];
 const week10Tags = ["#Testing", "#Feedback", "#Security", "#Demo", "#Tickets", "#Stage"];
@@ -21,6 +22,7 @@ export default function Blog() {
     () =>
       Array.from(
         new Set([
+          ...week13Tags,
           ...week12Tags,
           ...week11Tags,
           ...week10Tags,
@@ -41,6 +43,7 @@ export default function Blog() {
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek13 = hasTagMatch(week13Tags);
   const showWeek12 = hasTagMatch(week12Tags);
   const showWeek11 = hasTagMatch(week11Tags);
   const showWeek10 = hasTagMatch(week10Tags);
@@ -54,6 +57,7 @@ export default function Blog() {
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
   const hasResults =
+    showWeek13 ||
     showWeek12 ||
     showWeek11 ||
     showWeek10 ||
@@ -90,6 +94,74 @@ export default function Blog() {
             Geen resultaten voor de geselecteerde tags. Probeer een andere tagcombinatie of klik op
             reset.
           </p>
+        </article>
+      ) : null}
+
+      {showWeek13 ? (
+        <article className="card latest-card">
+          <div className="post-meta">Blogpost week 13</div>
+          <h3 className="post-title">Blog week 13</h3>
+          <p className="post-excerpt">
+            Deze week stond volledig in het teken van testen, testen en... nog eens testen. Waar
+            de focus de voorbije weken vooral lag op het bouwen van functionaliteiten, ben ik nu
+            echt diep in het testing-gedeelte gedoken. Het is opvallend hoe anders deze fase
+            aanvoelt: in plaats van nieuwe dingen te creeren, ben ik nu vooral bezig met het
+            controleren, uitdagen en soms zelfs &quot;breken&quot; van wat er al gebouwd is.
+          </p>
+          <p className="post-excerpt">
+            Tijdens het schrijven van de testen kwam er plots een onverwachte uitdaging op mijn
+            pad: een buildfout in de backend. Zo&apos;n moment haalt je even uit je flow, maar
+            tegelijk hoort het er natuurlijk bij. Ik heb die fout zo snel mogelijk proberen op te
+            lossen, omdat het hele project anders vastloopt. Het gaf wel een goed gevoel om even
+            terug in de code te duiken en het probleem effectief te kunnen fixen. Het zijn net die
+            kleine &quot;crisismomentjes&quot; die het werk afwisselend en interessant houden.
+          </p>
+          <p className="post-excerpt">
+            Voorlopig ben ik me vooral aan het focussen op het testen van de userpage. Daarbij
+            kijk ik niet alleen of alles werkt, maar ook of alles correct wordt weergegeven voor de
+            verschillende accountrollen. Ik test dit dus voor alle drie de rollen afzonderlijk: wat
+            ziet een admin, wat ziet een gewone gebruiker, en zijn er geen zaken zichtbaar die
+            eigenlijk niet zichtbaar mogen zijn? Dit maakt het testen een stuk complexer, maar ook
+            realistischer. Het dwingt me om echt na te denken vanuit het perspectief van de
+            eindgebruiker.
+          </p>
+          <p className="post-excerpt">
+            Wat ik merk, is dat testen schrijven een soort puzzel is. Je probeert alle mogelijke
+            scenario&apos;s te bedenken: wat als iemand iets verkeerd invoert? Wat als een
+            bepaalde data ontbreekt? Wat als een gebruiker probeert iets te doen waarvoor hij geen
+            rechten heeft? Het is soms zoeken naar de juiste aanpak, maar elke geslaagde test voelt
+            als een kleine overwinning.
+          </p>
+          <p className="post-excerpt">
+            Naast al het technische werk was er gelukkig ook ruimte voor wat ontspanning. Het was
+            weer gezellig met de andere stagiaires, en de sfeer zat er goed in. Vooral tijdens het
+            schoterkas spelen werd het verrassend spannend. Er ontstond een gezonde competitie
+            waarbij iedereen natuurlijk wilde winnen. Het zijn die momenten die ervoor zorgen dat
+            de stage niet alleen leerrijk is, maar ook gewoon leuk blijft.
+          </p>
+          <p className="post-excerpt">
+            Ook deze week had ik opnieuw mijn vaste meetings met mijn stage mentor, technische
+            begeleider en de project owner. Deze verliepen zoals gewoonlijk vlot. Ik heb opnieuw
+            waardevolle feedback gekregen waar ik verder mee aan de slag kan. Het is fijn om te
+            merken dat mijn werk opgevolgd wordt en dat ik steeds gerichter kan verbeteren.
+          </p>
+          <p className="post-excerpt">
+            Als ik deze week in een woord zou moeten samenvatten, dan is het
+            &quot;grondigheid&quot;. Alles draait momenteel rond het zeker maken dat wat gebouwd
+            is, ook echt goed werkt in elke mogelijke situatie. Het vraagt geduld en aandacht voor
+            detail, maar het is een cruciale stap richting een kwalitatief eindproduct.
+          </p>
+          <p className="post-excerpt">
+            Ik ben benieuwd wat volgende week zal brengen, maar een ding is zeker: ik blijf verder
+            bouwen aan de betrouwbaarheid van het project, test per test.
+          </p>
+          <div className="tags">
+            {week13Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
         </article>
       ) : null}
 

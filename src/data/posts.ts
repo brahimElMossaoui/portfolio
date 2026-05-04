@@ -15,6 +15,48 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "blog-week-13",
+    title: "Blog week 13",
+    date: "2026-05-04",
+    excerpt:
+      "Deze week stond volledig in het teken van grondig testen, met focus op de userpage, accountrollen en het oplossen van een backend buildfout.",
+    tags: ["#Testing", "#Userpage", "#Rollen", "#Backend", "#Meetings", "#Stage"],
+    content: [
+      {
+        type: "p",
+        text: "Deze week stond volledig in het teken van testen, testen en... nog eens testen. Waar de focus de voorbije weken vooral lag op het bouwen van functionaliteiten, ben ik nu echt diep in het testing-gedeelte gedoken. Het is opvallend hoe anders deze fase aanvoelt: in plaats van nieuwe dingen te creeren, ben ik nu vooral bezig met het controleren, uitdagen en soms zelfs \"breken\" van wat er al gebouwd is.",
+      },
+      {
+        type: "p",
+        text: "Tijdens het schrijven van de testen kwam er plots een onverwachte uitdaging op mijn pad: een buildfout in de backend. Zo'n moment haalt je even uit je flow, maar tegelijk hoort het er natuurlijk bij. Ik heb die fout zo snel mogelijk proberen op te lossen, omdat het hele project anders vastloopt. Het gaf wel een goed gevoel om even terug in de code te duiken en het probleem effectief te kunnen fixen. Het zijn net die kleine \"crisismomentjes\" die het werk afwisselend en interessant houden.",
+      },
+      {
+        type: "p",
+        text: "Voorlopig ben ik me vooral aan het focussen op het testen van de userpage. Daarbij kijk ik niet alleen of alles werkt, maar ook of alles correct wordt weergegeven voor de verschillende accountrollen. Ik test dit dus voor alle drie de rollen afzonderlijk: wat ziet een admin, wat ziet een gewone gebruiker, en zijn er geen zaken zichtbaar die eigenlijk niet zichtbaar mogen zijn? Dit maakt het testen een stuk complexer, maar ook realistischer. Het dwingt me om echt na te denken vanuit het perspectief van de eindgebruiker.",
+      },
+      {
+        type: "p",
+        text: "Wat ik merk, is dat testen schrijven een soort puzzel is. Je probeert alle mogelijke scenario's te bedenken: wat als iemand iets verkeerd invoert? Wat als een bepaalde data ontbreekt? Wat als een gebruiker probeert iets te doen waarvoor hij geen rechten heeft? Het is soms zoeken naar de juiste aanpak, maar elke geslaagde test voelt als een kleine overwinning.",
+      },
+      {
+        type: "p",
+        text: "Naast al het technische werk was er gelukkig ook ruimte voor wat ontspanning. Het was weer gezellig met de andere stagiaires, en de sfeer zat er goed in. Vooral tijdens het schoterkas spelen werd het verrassend spannend. Er ontstond een gezonde competitie waarbij iedereen natuurlijk wilde winnen. Het zijn die momenten die ervoor zorgen dat de stage niet alleen leerrijk is, maar ook gewoon leuk blijft.",
+      },
+      {
+        type: "p",
+        text: "Ook deze week had ik opnieuw mijn vaste meetings met mijn stage mentor, technische begeleider en de project owner. Deze verliepen zoals gewoonlijk vlot. Ik heb opnieuw waardevolle feedback gekregen waar ik verder mee aan de slag kan. Het is fijn om te merken dat mijn werk opgevolgd wordt en dat ik steeds gerichter kan verbeteren.",
+      },
+      {
+        type: "p",
+        text: "Als ik deze week in een woord zou moeten samenvatten, dan is het \"grondigheid\". Alles draait momenteel rond het zeker maken dat wat gebouwd is, ook echt goed werkt in elke mogelijke situatie. Het vraagt geduld en aandacht voor detail, maar het is een cruciale stap richting een kwalitatief eindproduct.",
+      },
+      {
+        type: "p",
+        text: "Ik ben benieuwd wat volgende week zal brengen, maar een ding is zeker: ik blijf verder bouwen aan de betrouwbaarheid van het project, test per test.",
+      },
+    ],
+  },
+  {
     slug: "blog-week-12",
     title: "Blog week 12",
     date: "2026-04-27",
