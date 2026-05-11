@@ -15,6 +15,48 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "blog-week-14",
+    title: "Blog week 14",
+    date: "2026-05-11",
+    excerpt:
+      "Een afwisselende week met veel testen, een stage-evenement op school, intervisie en het afronden van het project richting presentatie.",
+    tags: ["#Testing", "#StageEvent", "#Demo", "#Intervisie", "#Presentatie", "#Stage"],
+    content: [
+      {
+        type: "p",
+        text: "Een nieuwe week, een nieuwe blog - en stilaan begint het ook te voelen alsof mijn stage richting zijn finale gaat. Afgelopen week stond opnieuw grotendeels in het teken van testen schrijven, maar deze keer zat er ook een hele leuke en unieke ervaring tussen die mijn week echt speciaal maakte.",
+      },
+      {
+        type: "p",
+        text: "Op dinsdag kreeg ik namelijk de kans om mee te gaan naar het stage-evenement dat het bedrijf organiseerde op school. Dat was niet alleen een leuke afwisseling van het dagelijkse werk, maar ook een totaal andere rol voor mij. In plaats van zelf student te zijn die op zoek is naar een stageplek, stond ik deze keer aan de andere kant: ik mocht het bedrijf vertegenwoordigen en andere studenten helpen.",
+      },
+      {
+        type: "p",
+        text: "Ik begon meestal met een korte uitleg over hoe mijn stage bij Brightest eruitziet. Daarna gaf ik een demo van het project waar ik de afgelopen weken zo hard aan heb gewerkt. Het was best tof om te zien hoe geinteresseerde studenten reageerden en vragen stelden. Je merkt dan pas echt hoeveel je zelf hebt bijgeleerd, omdat je alles op een duidelijke manier kan uitleggen.",
+      },
+      {
+        type: "p",
+        text: "Wat me misschien nog het meeste voldoening gaf, was dat ik andere studenten effectief kon helpen. Ik gaf hen tips over hoe ze best hun zoektocht aanpakken: op tijd beginnen, initiatief tonen, en niet bang zijn om zichzelf te laten zien. Het voelde een beetje alsof ik mijn eigen ervaringen van de voorbije maanden kon doorgeven, en dat maakte het extra waardevol.",
+      },
+      {
+        type: "p",
+        text: "Later in de week, op vrijdag, had ik ook nog een intervisiemoment op school. Daar bespraken we hoe onze stages verlopen en kregen we de kans om ervaringen uit te wisselen met andere studenten. Het was interessant om te horen hoe anderen hun stage beleven en om samen na te denken over mogelijke verbeterpunten voor de opleiding. Zo'n momenten zorgen ervoor dat je even kan reflecteren en alles in perspectief kan plaatsen.",
+      },
+      {
+        type: "p",
+        text: "De rest van de week stond vooral in het teken van afronden. Ik heb verder gewerkt aan het schrijven en afwerken van testen, en tegelijkertijd ook het project in zijn geheel netjes afgerond. Alles begint stilaan op zijn plaats te vallen, wat een goed gevoel geeft. Zeker met het presentatie-moment dat volgende week op de planning staat, merk ik dat de focus nu ligt op het volledig \"klaarzetten\" van alles.",
+      },
+      {
+        type: "p",
+        text: "Wat deze week voor mij typeerde, was de afwisseling: enerzijds diep geconcentreerd bezig zijn met testen en afronden, en anderzijds even uit die technische bubbel stappen en mensen helpen, uitleg geven en ervaringen delen. Die combinatie maakte het een bijzonder aangename en leerrijke week.",
+      },
+      {
+        type: "p",
+        text: "Ik kijk nu vooral uit naar volgende week, waar alles samenkomt tijdens het presentatie-moment. Spannend, maar ook iets om trots op te zijn na alles wat ik de voorbije weken heb opgebouwd.",
+      },
+    ],
+  },
+  {
     slug: "blog-week-13",
     title: "Blog week 13",
     date: "2026-05-04",

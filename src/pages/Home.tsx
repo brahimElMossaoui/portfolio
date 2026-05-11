@@ -38,19 +38,19 @@ export default function Home() {
         </div>
 
         <article className="card latest-card">
-          <div className="post-meta">Blogpost week 13</div>
-          <h3 className="post-title">Blog week 13</h3>
+          <div className="post-meta">Blogpost week 14</div>
+          <h3 className="post-title">Blog week 14</h3>
           <p className="post-excerpt">
-            Deze week stond volledig in het teken van grondig testen, met focus op de userpage,
-            accountrollen en het oplossen van een backend buildfout.
+            Een afwisselende week met veel testen, een stage-evenement op school, intervisie en het
+            afronden van het project richting presentatie.
           </p>
           <div className="tags">
             <span className="tag tag-static">#Testing</span>
-            <span className="tag tag-static">#Userpage</span>
-            <span className="tag tag-static">#Rollen</span>
-            <span className="tag tag-static">#Backend</span>
+            <span className="tag tag-static">#StageEvent</span>
+            <span className="tag tag-static">#Intervisie</span>
+            <span className="tag tag-static">#Presentatie</span>
           </div>
-          <Link className="link" to="/blog">
+          <Link className="link" to="/blog/blog-week-14">
             Read more -&gt;
           </Link>
         </article>

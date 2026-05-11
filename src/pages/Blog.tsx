@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week14Tags = ["#Testing", "#StageEvent", "#Demo", "#Intervisie", "#Presentatie", "#Stage"];
 const week13Tags = ["#Testing", "#Userpage", "#Rollen", "#Backend", "#Meetings", "#Stage"];
 const week12Tags = ["#Testing", "#Playwright", "#Trello", "#Tickets", "#QA", "#Stage"];
 const week11Tags = ["#Zelfstandigheid", "#Feedback", "#Features", "#Planning", "#Meetings", "#Stage"];
@@ -22,6 +23,7 @@ export default function Blog() {
     () =>
       Array.from(
         new Set([
+          ...week14Tags,
           ...week13Tags,
           ...week12Tags,
           ...week11Tags,
@@ -43,6 +45,7 @@ export default function Blog() {
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek14 = hasTagMatch(week14Tags);
   const showWeek13 = hasTagMatch(week13Tags);
   const showWeek12 = hasTagMatch(week12Tags);
   const showWeek11 = hasTagMatch(week11Tags);
@@ -57,6 +60,7 @@ export default function Blog() {
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
   const hasResults =
+    showWeek14 ||
     showWeek13 ||
     showWeek12 ||
     showWeek11 ||
@@ -94,6 +98,73 @@ export default function Blog() {
             Geen resultaten voor de geselecteerde tags. Probeer een andere tagcombinatie of klik op
             reset.
           </p>
+        </article>
+      ) : null}
+
+      {showWeek14 ? (
+        <article className="card latest-card">
+          <div className="post-meta">Blogpost week 14</div>
+          <h3 className="post-title">Blog week 14</h3>
+          <p className="post-excerpt">
+            Een nieuwe week, een nieuwe blog - en stilaan begint het ook te voelen alsof mijn
+            stage richting zijn finale gaat. Afgelopen week stond opnieuw grotendeels in het teken
+            van testen schrijven, maar deze keer zat er ook een hele leuke en unieke ervaring
+            tussen die mijn week echt speciaal maakte.
+          </p>
+          <p className="post-excerpt">
+            Op dinsdag kreeg ik namelijk de kans om mee te gaan naar het stage-evenement dat het
+            bedrijf organiseerde op school. Dat was niet alleen een leuke afwisseling van het
+            dagelijkse werk, maar ook een totaal andere rol voor mij. In plaats van zelf student te
+            zijn die op zoek is naar een stageplek, stond ik deze keer aan de andere kant: ik mocht
+            het bedrijf vertegenwoordigen en andere studenten helpen.
+          </p>
+          <p className="post-excerpt">
+            Ik begon meestal met een korte uitleg over hoe mijn stage bij Brightest eruitziet.
+            Daarna gaf ik een demo van het project waar ik de afgelopen weken zo hard aan heb
+            gewerkt. Het was best tof om te zien hoe geinteresseerde studenten reageerden en vragen
+            stelden. Je merkt dan pas echt hoeveel je zelf hebt bijgeleerd, omdat je alles op een
+            duidelijke manier kan uitleggen.
+          </p>
+          <p className="post-excerpt">
+            Wat me misschien nog het meeste voldoening gaf, was dat ik andere studenten effectief
+            kon helpen. Ik gaf hen tips over hoe ze best hun zoektocht aanpakken: op tijd beginnen,
+            initiatief tonen, en niet bang zijn om zichzelf te laten zien. Het voelde een beetje
+            alsof ik mijn eigen ervaringen van de voorbije maanden kon doorgeven, en dat maakte het
+            extra waardevol.
+          </p>
+          <p className="post-excerpt">
+            Later in de week, op vrijdag, had ik ook nog een intervisiemoment op school. Daar
+            bespraken we hoe onze stages verlopen en kregen we de kans om ervaringen uit te
+            wisselen met andere studenten. Het was interessant om te horen hoe anderen hun stage
+            beleven en om samen na te denken over mogelijke verbeterpunten voor de opleiding.
+            Zo&apos;n momenten zorgen ervoor dat je even kan reflecteren en alles in perspectief
+            kan plaatsen.
+          </p>
+          <p className="post-excerpt">
+            De rest van de week stond vooral in het teken van afronden. Ik heb verder gewerkt aan
+            het schrijven en afwerken van testen, en tegelijkertijd ook het project in zijn geheel
+            netjes afgerond. Alles begint stilaan op zijn plaats te vallen, wat een goed gevoel
+            geeft. Zeker met het presentatie-moment dat volgende week op de planning staat, merk ik
+            dat de focus nu ligt op het volledig &quot;klaarzetten&quot; van alles.
+          </p>
+          <p className="post-excerpt">
+            Wat deze week voor mij typeerde, was de afwisseling: enerzijds diep geconcentreerd
+            bezig zijn met testen en afronden, en anderzijds even uit die technische bubbel stappen
+            en mensen helpen, uitleg geven en ervaringen delen. Die combinatie maakte het een
+            bijzonder aangename en leerrijke week.
+          </p>
+          <p className="post-excerpt">
+            Ik kijk nu vooral uit naar volgende week, waar alles samenkomt tijdens het
+            presentatie-moment. Spannend, maar ook iets om trots op te zijn na alles wat ik de
+            voorbije weken heb opgebouwd.
+          </p>
+          <div className="tags">
+            {week14Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
         </article>
       ) : null}
 
