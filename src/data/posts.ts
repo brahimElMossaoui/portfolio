@@ -15,6 +15,60 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "blog-week-15",
+    title: "Blog week 15",
+    date: "2026-05-18",
+    excerpt:
+      "Mijn allerlaatste stagedag: testing afronden, terugblikken op groei, zelfstandigheid en een laatste spannende match aan de kikkertafel.",
+    tags: ["#Testing", "#Playwright", "#LaatsteDag", "#Reflectie", "#Groei", "#Stage"],
+    content: [
+      {
+        type: "p",
+        text: "Nieuwe week, nieuwe blog... maar deze keer voelt het toch anders. Ondertussen is het namelijk mijn allerlaatste stagedag. En eerlijk gezegd: wat een avontuur is dit geweest. Het is vreemd om te beseffen hoe snel de tijd voorbij is gegaan. Wat in het begin nog voelde als een spannende eerste stap in een nieuwe omgeving, is uiteindelijk uitgegroeid tot een periode waarin ik enorm veel heb bijgeleerd, uitdagingen heb overwonnen en heel wat mooie momenten heb meegemaakt.",
+      },
+      {
+        type: "p",
+        text: "De afgelopen week stond vooral in het teken van de laatste puntjes afwerken. Ik heb nog hard gewerkt aan het testing-gedeelte van het project, zodat alles volledig afgerond kon worden. De focus lag op het controleren van de laatste testen, het nakijken van verschillende scenario's en ervoor zorgen dat alles zo stabiel mogelijk werkte. Het voelde goed om die laatste fase nog serieus aan te pakken, omdat het project ondertussen veel meer geworden is dan gewoon een schoolopdracht. Je steekt er weken werk, energie en tijd in, en dan wil je het natuurlijk ook goed afsluiten.",
+      },
+      {
+        type: "p",
+        text: "Wanneer ik terugdenk aan het project zelf, besef ik hoeveel er eigenlijk veranderd is sinds het begin van mijn stage. Er kwamen voortdurend nieuwe functionaliteiten bij, feedback moest verwerkt worden, problemen moesten opgelost worden en uiteindelijk kwamen daar ook testen bovenop. In het begin leek alles soms nog groot en ingewikkeld, maar stap voor stap begon alles duidelijker te worden. Wat eerst moeilijk leek, werd na verloop van tijd bijna vanzelfsprekend.",
+      },
+      {
+        type: "p",
+        text: "Naast het technische gedeelte heb ik misschien nog wel meer geleerd op persoonlijk vlak. Ik heb geleerd om zelfstandiger te werken, zeker op het moment dat mijn stagepartner zijn stage had afgerond en ik alleen verder moest. Dat was in het begin even aanpassen, maar achteraf gezien heeft dat me alleen maar sterker gemaakt. Ik leerde zelf prioriteiten stellen, mijn planning bewaken en oplossingen zoeken wanneer ik vastzat.",
+      },
+      {
+        type: "p",
+        text: "Ik heb ook heel wat nieuwe dingen leren kennen tijdens deze stage. Zo kwam ik in aanraking met tools en technologieen waar ik voordien weinig of geen ervaring mee had. Van het bouwen van functionaliteiten tot het leren werken met testingtools zoals Playwright: elke week bracht wel iets nieuws met zich mee. En hoewel niet alles altijd van de eerste keer lukte, waren het net die momenten waarop ik het meeste bijleerde.",
+      },
+      {
+        type: "p",
+        text: "Ook de wekelijkse meetings met mijn stage mentor, technische begeleider en project owner waren een belangrijk onderdeel van mijn stage. Door de feedback en gesprekken kreeg ik niet alleen technische inzichten, maar ook meer vertrouwen in mijn eigen werk. Het was fijn om te merken dat mijn vooruitgang zichtbaar was en dat ik telkens verder kon bouwen op wat ik had geleerd.",
+      },
+      {
+        type: "p",
+        text: "Maar een stage draait natuurlijk niet alleen rond code en projecten. Wat deze periode ook zo leuk maakte, waren de mensen rondom mij. De momenten met de andere stagiaires zorgden altijd voor extra sfeer. En natuurlijk mogen de legendarische gevechten aan de kikkertafel niet ontbreken.",
+      },
+      {
+        type: "p",
+        text: "Want ook deze laatste week bleef de competitie daar nog volop leven. Er werden heel wat wedstrijden gespeeld en eerlijk is eerlijk: ik heb meer dan genoeg potjes verloren. Op een bepaald moment begon ik zelfs te denken dat winnen misschien gewoon niet meer in mijn planning zat. Maar dan kwam het laatste potje van de dag... en dat werd zonder twijfel het spannendste van allemaal. Iedereen zat volledig in het spel, de spanning steeg en er werd fanatiek gestreden alsof er een wereldtitel op het spel stond. Na een zenuwslopende strijd gebeurde het ondenkbare: ik won uiteindelijk toch nog. Misschien was dat wel de perfecte symbolische afsluiter van mijn stage: blijven proberen, blijven doorgaan, en uiteindelijk toch eindigen met een overwinning.",
+      },
+      {
+        type: "p",
+        text: "Als ik mijn volledige stage in een woord zou moeten samenvatten, dan kies ik voor: groei. Groei op technisch vlak, groei in zelfstandigheid, groei in communicatie en groei als persoon. Ik begon hier als student die veel wilde leren en eindig deze stage met veel meer ervaring, kennis en vertrouwen dan ik had verwacht.",
+      },
+      {
+        type: "p",
+        text: "Ik kijk met een heel positief gevoel terug op deze periode. Niet alleen omdat ik veel heb geleerd, maar ook omdat ik fijne mensen heb leren kennen en ervaringen heb opgedaan die ik zeker zal meenemen naar de toekomst.",
+      },
+      {
+        type: "p",
+        text: "En daarmee sluit ik mijn laatste stageblog af. Een laatste keer: nieuwe week, nieuwe blog... en tegelijk ook de laatste. Wat een avontuur.",
+      },
+    ],
+  },
+  {
     slug: "blog-week-14",
     title: "Blog week 14",
     date: "2026-05-11",

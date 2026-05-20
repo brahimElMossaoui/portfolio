@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import TagFilter from "../components/TagFilter";
 
+const week15Tags = ["#Testing", "#Playwright", "#LaatsteDag", "#Reflectie", "#Groei", "#Stage"];
 const week14Tags = ["#Testing", "#StageEvent", "#Demo", "#Intervisie", "#Presentatie", "#Stage"];
 const week13Tags = ["#Testing", "#Userpage", "#Rollen", "#Backend", "#Meetings", "#Stage"];
 const week12Tags = ["#Testing", "#Playwright", "#Trello", "#Tickets", "#QA", "#Stage"];
@@ -23,6 +24,7 @@ export default function Blog() {
     () =>
       Array.from(
         new Set([
+          ...week15Tags,
           ...week14Tags,
           ...week13Tags,
           ...week12Tags,
@@ -45,6 +47,7 @@ export default function Blog() {
   const hasTagMatch = (weekTags: string[]) =>
     selectedTags.length === 0 || selectedTags.some((tag) => weekTags.includes(tag));
 
+  const showWeek15 = hasTagMatch(week15Tags);
   const showWeek14 = hasTagMatch(week14Tags);
   const showWeek13 = hasTagMatch(week13Tags);
   const showWeek12 = hasTagMatch(week12Tags);
@@ -60,6 +63,7 @@ export default function Blog() {
   const showWeek2 = hasTagMatch(week2Tags);
   const showWeek1 = hasTagMatch(week1Tags);
   const hasResults =
+    showWeek15 ||
     showWeek14 ||
     showWeek13 ||
     showWeek12 ||
@@ -98,6 +102,99 @@ export default function Blog() {
             Geen resultaten voor de geselecteerde tags. Probeer een andere tagcombinatie of klik op
             reset.
           </p>
+        </article>
+      ) : null}
+
+      {showWeek15 ? (
+        <article className="card latest-card">
+          <div className="post-meta">Blogpost week 15</div>
+          <h3 className="post-title">Blog week 15</h3>
+          <p className="post-excerpt">
+            Nieuwe week, nieuwe blog... maar deze keer voelt het toch anders. Ondertussen is het
+            namelijk mijn allerlaatste stagedag. En eerlijk gezegd: wat een avontuur is dit
+            geweest. Het is vreemd om te beseffen hoe snel de tijd voorbij is gegaan. Wat in het
+            begin nog voelde als een spannende eerste stap in een nieuwe omgeving, is uiteindelijk
+            uitgegroeid tot een periode waarin ik enorm veel heb bijgeleerd, uitdagingen heb
+            overwonnen en heel wat mooie momenten heb meegemaakt.
+          </p>
+          <p className="post-excerpt">
+            De afgelopen week stond vooral in het teken van de laatste puntjes afwerken. Ik heb nog
+            hard gewerkt aan het testing-gedeelte van het project, zodat alles volledig afgerond
+            kon worden. De focus lag op het controleren van de laatste testen, het nakijken van
+            verschillende scenario&apos;s en ervoor zorgen dat alles zo stabiel mogelijk werkte. Het
+            voelde goed om die laatste fase nog serieus aan te pakken, omdat het project
+            ondertussen veel meer geworden is dan gewoon een schoolopdracht. Je steekt er weken
+            werk, energie en tijd in, en dan wil je het natuurlijk ook goed afsluiten.
+          </p>
+          <p className="post-excerpt">
+            Wanneer ik terugdenk aan het project zelf, besef ik hoeveel er eigenlijk veranderd is
+            sinds het begin van mijn stage. Er kwamen voortdurend nieuwe functionaliteiten bij,
+            feedback moest verwerkt worden, problemen moesten opgelost worden en uiteindelijk
+            kwamen daar ook testen bovenop. In het begin leek alles soms nog groot en ingewikkeld,
+            maar stap voor stap begon alles duidelijker te worden. Wat eerst moeilijk leek, werd na
+            verloop van tijd bijna vanzelfsprekend.
+          </p>
+          <p className="post-excerpt">
+            Naast het technische gedeelte heb ik misschien nog wel meer geleerd op persoonlijk
+            vlak. Ik heb geleerd om zelfstandiger te werken, zeker op het moment dat mijn
+            stagepartner zijn stage had afgerond en ik alleen verder moest. Dat was in het begin
+            even aanpassen, maar achteraf gezien heeft dat me alleen maar sterker gemaakt. Ik leerde
+            zelf prioriteiten stellen, mijn planning bewaken en oplossingen zoeken wanneer ik
+            vastzat.
+          </p>
+          <p className="post-excerpt">
+            Ik heb ook heel wat nieuwe dingen leren kennen tijdens deze stage. Zo kwam ik in
+            aanraking met tools en technologieen waar ik voordien weinig of geen ervaring mee had.
+            Van het bouwen van functionaliteiten tot het leren werken met testingtools zoals
+            Playwright: elke week bracht wel iets nieuws met zich mee. En hoewel niet alles altijd
+            van de eerste keer lukte, waren het net die momenten waarop ik het meeste bijleerde.
+          </p>
+          <p className="post-excerpt">
+            Ook de wekelijkse meetings met mijn stage mentor, technische begeleider en project owner
+            waren een belangrijk onderdeel van mijn stage. Door de feedback en gesprekken kreeg ik
+            niet alleen technische inzichten, maar ook meer vertrouwen in mijn eigen werk. Het was
+            fijn om te merken dat mijn vooruitgang zichtbaar was en dat ik telkens verder kon
+            bouwen op wat ik had geleerd.
+          </p>
+          <p className="post-excerpt">
+            Maar een stage draait natuurlijk niet alleen rond code en projecten. Wat deze periode
+            ook zo leuk maakte, waren de mensen rondom mij. De momenten met de andere stagiaires
+            zorgden altijd voor extra sfeer. En natuurlijk mogen de legendarische gevechten aan de
+            kikkertafel niet ontbreken.
+          </p>
+          <p className="post-excerpt">
+            Want ook deze laatste week bleef de competitie daar nog volop leven. Er werden heel wat
+            wedstrijden gespeeld en eerlijk is eerlijk: ik heb meer dan genoeg potjes verloren. Op
+            een bepaald moment begon ik zelfs te denken dat winnen misschien gewoon niet meer in
+            mijn planning zat. Maar dan kwam het laatste potje van de dag... en dat werd zonder
+            twijfel het spannendste van allemaal. Iedereen zat volledig in het spel, de spanning
+            steeg en er werd fanatiek gestreden alsof er een wereldtitel op het spel stond. Na een
+            zenuwslopende strijd gebeurde het ondenkbare: ik won uiteindelijk toch nog. Misschien
+            was dat wel de perfecte symbolische afsluiter van mijn stage: blijven proberen, blijven
+            doorgaan, en uiteindelijk toch eindigen met een overwinning.
+          </p>
+          <p className="post-excerpt">
+            Als ik mijn volledige stage in een woord zou moeten samenvatten, dan kies ik voor:
+            groei. Groei op technisch vlak, groei in zelfstandigheid, groei in communicatie en
+            groei als persoon. Ik begon hier als student die veel wilde leren en eindig deze stage
+            met veel meer ervaring, kennis en vertrouwen dan ik had verwacht.
+          </p>
+          <p className="post-excerpt">
+            Ik kijk met een heel positief gevoel terug op deze periode. Niet alleen omdat ik veel
+            heb geleerd, maar ook omdat ik fijne mensen heb leren kennen en ervaringen heb opgedaan
+            die ik zeker zal meenemen naar de toekomst.
+          </p>
+          <p className="post-excerpt">
+            En daarmee sluit ik mijn laatste stageblog af. Een laatste keer: nieuwe week, nieuwe
+            blog... en tegelijk ook de laatste. Wat een avontuur.
+          </p>
+          <div className="tags">
+            {week15Tags.map((tag) => (
+              <span key={tag} className="tag tag-static">
+                {tag}
+              </span>
+            ))}
+          </div>
         </article>
       ) : null}
 
